@@ -30,12 +30,13 @@ const TabIcon = ({ focused, icon, title }: ITabIcon) => {
   }
 
   return (
-    <View className="size-full justify-center items-center rounded-full py-2">
+    <View className="size-full justify-center items-center rounded-full py-2 mt-4" style={{ minWidth: 300 }}>
       <Image 
         source={icon}
         tintColor="#A8B5DB"
         className="size-5"
       />
+      <Text className="text-gray-500 text-sm font-semibold">{title}</Text>
     </View>
   )    
 }
