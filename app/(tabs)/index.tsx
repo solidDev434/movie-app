@@ -6,6 +6,7 @@ import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import useFetch from "@/hooks/useFetch";
 import { fetchMovies } from "@/services/api";
+import MovieCard from "@/components/MovieCard";
 
 export default function Index() {
   const router = useRouter();
@@ -13,7 +14,7 @@ export default function Index() {
     data: movies, 
     loading: moviesLoading, 
     error: moviesError 
-  } = useFetch(() => fetchMovies({ query: "" }));
+  } = useFetch(() => fetchMovies({ query: "kimetsu" }));
 
   return (
     <View className="flex-1 bg-primary">
@@ -49,7 +50,7 @@ export default function Index() {
               <FlatList 
                 data={movies}
                 renderItem={({ item }) => (
-                  <Text className="text-white text-sm">{item.title}</Text>
+                  <MovieCard {...item} />
                 )}
                 keyExtractor={(item) => item.id.toString()}
                 numColumns={3}
