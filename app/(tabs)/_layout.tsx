@@ -16,8 +16,8 @@ const TabIcon = ({ focused, icon, title }: ITabIcon) => {
     return (
       <ImageBackground
         source={images.highlight}
-        className="flex flex-col w-full min-w-[112px] justify-center items-center rounded-full overflow-hidden mt-4"
-        style={{ minHeight: 73, minWidth: 122, justifyContent: "center", alignItems: "center" }}
+        className="flex flex-col justify-center items-center rounded-full overflow-hidden mt-6"
+        style={{ minHeight: 52, minWidth: 86, justifyContent: "center", alignItems: "center" }}
       >
         <Image 
           source={icon}
@@ -30,13 +30,12 @@ const TabIcon = ({ focused, icon, title }: ITabIcon) => {
   }
 
   return (
-    <View className="size-full justify-center items-center rounded-full py-2 mt-4" style={{ minWidth: 300 }}>
+    <View className="size-full justify-center items-center rounded-full py-2 mt-6" style={{ minWidth: 300 }}>
       <Image 
         source={icon}
         tintColor="#A8B5DB"
         className="size-5"
       />
-      <Text className="text-gray-500 text-sm font-semibold">{title}</Text>
     </View>
   )    
 }
