@@ -4,13 +4,12 @@ import { icons } from '@/constants/icons'
 
 interface ISearchBar {
     onPress?: () => void;
+    onChangeText?: (text: string) => void;
     placeholder: string;
+    value?: string;
 }
 
-const SearchBar = ({ onPress, placeholder }: ISearchBar) => {
-    const [query, setQuery] = useState();
-
-
+const SearchBar = ({ onPress, placeholder, value="", onChangeText }: ISearchBar) => {
     return (
         <View className="flex-row items-center gap-x-1 bg-dark-200 rounded-full px-5 py-4">
             <Image 
@@ -22,8 +21,8 @@ const SearchBar = ({ onPress, placeholder }: ISearchBar) => {
             <TextInput 
                 onPress={onPress}
                 placeholder={placeholder}
-                value={query}
-                onChange={(da) => console.log("dsfdsf", da.currentTarget)}
+                value={value}
+                onChangeText={onChangeText}
                 placeholderTextColor="#a8b5db"
                 className="flex-1 text-white"
             />

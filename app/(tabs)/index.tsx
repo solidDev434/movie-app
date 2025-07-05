@@ -14,16 +14,17 @@ export default function Index() {
     data: movies, 
     loading: moviesLoading, 
     error: moviesError 
-  } = useFetch(() => fetchMovies({ query: "kimetsu" }));
+  } = useFetch(() => fetchMovies({ query: "" }));
 
   return (
     <View className="flex-1 bg-primary">
       <Image 
         source={images.bg}
-        className="absolute w-full z-0"
+        className="flex-1 absolute w-full z-0"
+        resizeMode="cover"
       />
 
-      <View className="flex-1 px-5 pb-5">
+      <View className="flex-1 px-5">
         <Image 
           source={icons.logo}
           className="w-12 h-10 mt-20 mb-5 mx-auto"
@@ -62,6 +63,7 @@ export default function Index() {
                 }}
                 className="mt-2 pb-32"
                 scrollEnabled={true}
+                contentContainerStyle={{ paddingBottom: 100 }}
               />
             </>
           </View>
