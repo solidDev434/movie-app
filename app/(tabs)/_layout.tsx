@@ -16,7 +16,7 @@ const TabIcon = ({ focused, icon, title }: ITabIcon) => {
     return (
       <ImageBackground
         source={images.highlight}
-        className="flex flex-col justify-center items-center rounded-full overflow-hidden mt-6"
+        className="flex-row justify-center items-center rounded-full overflow-hidden mt-6 gap-x-1.5"
         style={{ minHeight: 52, minWidth: 86, justifyContent: "center", alignItems: "center" }}
       >
         <Image 

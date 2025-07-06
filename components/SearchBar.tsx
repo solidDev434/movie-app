@@ -1,5 +1,5 @@
 import { View, Image, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import { icons } from '@/constants/icons'
 
 interface ISearchBar {

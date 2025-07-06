@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function useFetch<T>(fetchFunction: () => Promise<T>, autoFetch: boolean = true) {
-    const [data, setData] = useState<T | null>(null);
+    const [data, setData] = useState<T | []>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<Error | null>(null);
 
@@ -21,7 +21,7 @@ function useFetch<T>(fetchFunction: () => Promise<T>, autoFetch: boolean = true)
     }
     
     const reset = () => {
-        setData(null);
+        setData([]);
         setLoading(false);
         setError(null);
     }
