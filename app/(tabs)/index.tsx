@@ -16,7 +16,7 @@ export default function Index() {
   const {
     data: trendingMovies, 
     loading: trendingMoviesLoading, 
-    error: trendingMoviesError,
+    error: trendingMoviesError
   } = useFetch<TrendingMovie[] | undefined>(getTrendingMovies);
 
   const { 
@@ -33,7 +33,11 @@ export default function Index() {
         resizeMode="cover"
       />
 
-      <ScrollView className="flex-1 px-5">
+      <ScrollView 
+        className="flex-1 px-5"
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ minHeight: "100%", paddingBottom: 10 }}
+      >
         <Image 
           source={icons.logo}
           className="w-12 h-10 mt-20 mb-5 mx-auto"
@@ -54,7 +58,7 @@ export default function Index() {
               placeholder="Search for a movie"
             />
 
-            {trendingMovies && (
+            {trendingMovies?.length && (
               <View className="mt-10">
                 <Text className="text-lg text-white font-bold mb-3">Trending Movies</Text>
 
@@ -93,8 +97,7 @@ export default function Index() {
                   marginBottom: 10
                 }}
                 className="mt-2 pb-32"
-                scrollEnabled={true}
-                // contentContainerStyle={{ paddingBottom: 50 }}
+                scrollEnabled={false}
               />
             </View>
           </View>
