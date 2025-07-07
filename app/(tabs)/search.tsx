@@ -34,7 +34,7 @@ const Search = () => {
   }, [searchQuery]);
 
   useEffect(() => {
-    if (movies.length > 0 && movies[0]) {
+    if (movies && movies?.length > 0) {
       updateSearchCount(searchQuery, movies[0]);
     } 
   }, [movies])
@@ -90,7 +90,7 @@ const Search = () => {
               <Text className="text-red-500 px-5 my-3">Error: {moviesError?.message}</Text>
             )}
 
-            {!moviesLoading && !moviesError && searchQuery.trim() && movies?.length > 0 && (
+            {!moviesLoading && !moviesError && searchQuery.trim() && movies && movies?.length > 0 && (
               <Text className="text-xl text-white font-bold">
                 Search Results for <Text className="text-purple-600">{searchQuery}</Text>
               </Text>

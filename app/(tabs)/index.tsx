@@ -33,7 +33,7 @@ export default function Index() {
         resizeMode="cover"
       />
 
-      <View className="flex-1 px-5">
+      <ScrollView className="flex-1 px-5">
         <Image 
           source={icons.logo}
           className="w-12 h-10 mt-20 mb-5 mx-auto"
@@ -94,13 +94,12 @@ export default function Index() {
                 }}
                 className="mt-2 pb-32"
                 scrollEnabled={true}
-                contentContainerStyle={{ paddingBottom: 100 }}
+                // contentContainerStyle={{ paddingBottom: 50 }}
               />
             </View>
           </View>
         )}
-
-      </View>
+      </ScrollView>
     </View>
   );
 }
